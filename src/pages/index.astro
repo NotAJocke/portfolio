@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import pp from "../images/pp.png";
+import HomePageTools from "../components/HomePageTools.astro";
+import HomePageSkills from "../components/HomePageSkills.astro";
+
+import "@fontsource/poppins/200.css";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+---
+
+<Layout title="Jocke." activeID="0">
+  <container class="flex flex-col px-32 mt-6">
+    <header class="flex justify-between items-end">
+      <text-header class="flex flex-col">
+        <h2 class="text-[40px] font-extralight leading-none font-[Poppins]">
+          Hey There 👋
+        </h2>
+        <h1 class="text-[64px] leading-none font-[Poppins] font-medium">
+          I'm <span class="text-[#3489EB] underline">Allan</span>.
+        </h1>
+      </text-header>
+      <Image
+        src={pp}
+        alt="Allan's profile picture"
+        class="w-[200px] h-[200px]"
+      />
+    </header>
+    <p class="max-w-[85%] mt-6 text-base font-[Poppins] font-light">
+      I'm a 20-year-old self-taught developer currently studying at university.
+      I have a strong passion for learning and enjoy contributing to large
+      projects. Let's connect and create something great together!
+    </p>
+    <h3 class="text-[20px] font-[Poppins] font-normal mt-12 mb-3">
+      Tools & Skills
+    </h3>
+    <div class="mb-6">
+      <HomePageTools />
+    </div>
+    <HomePageSkills />
+  </container>
+</Layout>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>

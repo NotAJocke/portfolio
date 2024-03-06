@@ -1,0 +1,17 @@
+---
+import type { GetStaticPaths } from "astro";
+export const getStaticPaths = (() => {
+  return [
+    {
+      params: { id: "nvim" },
+    },
+  ];
+}) satisfies GetStaticPaths;
+
+const { id } = Astro.params;
+import { getEntry } from "astro:content";
+const entry = await getEntry("articles", id);
+const { Content } = await entry.render();
+---
+
+<Content />

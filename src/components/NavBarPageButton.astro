@@ -1,0 +1,17 @@
+---
+import "@fontsource/poppins/400.css";
+
+const { routeName, routePath } = Astro.props;
+---
+
+<a
+  href={routePath}
+  class="w-full py-[5px] px-[10px] flex mb-[20px] rounded-lg hover:bg-white hover:shadow-md hover:transition-all nav-bar-page-button"
+>
+  <div class="icon mr-[10px]">
+    <slot />
+  </div>
+  <span class="font-[Poppins]">
+    {routeName}
+  </span>
+</a>

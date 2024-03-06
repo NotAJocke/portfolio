@@ -1,0 +1,83 @@
+---
+import "@fontsource-variable/inter";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import whisper from "../../images/whisperkeys.png";
+import screen from "../../images/projects/whisper/screen.png";
+import Label from "../../components/Label.astro";
+---
+
+<Layout title="WhisperKeys Project" activeID="1">
+  <header class="flex flex-col items-center">
+    <Image src={whisper} alt="WhisperKeys Logo" height={80} />
+    <h3 class="font-[Inter Variable] text-[40px]">Whisper Keys</h3>
+    <div class="flex space-x-2 mt-2">
+      <Label name="Rust">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg"
+          alt="Rust logo"
+          class="h-[20px]"
+        />
+      </Label>
+
+      <Label name="Svelte">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/langfr-1920px-Svelte_Logo.svg.png"
+          alt="Svelte logo"
+          class="h-[20px]"
+        />
+      </Label>
+
+      <Label name="Tauri">
+        <img
+          src="https://seeklogo.com/images/T/tauri-logo-39352BD5A1-seeklogo.com.png"
+          alt="Tauri logo"
+          class="h-[20px]"
+        />
+      </Label>
+    </div>
+  </header>
+  <div class="w-full flex flex-col mt-5">
+    <p class="font-[Inter Variable]">
+      A little software that emulates the sound of a mechanical keyboard when
+      you type. It's a rewrite of <a
+        href="https://mechvibes.com"
+        class="text-[#3489EB] underline"
+        target="_blank">Mechvibes</a
+      > in rust to be more lightweight and faster.
+    </p>
+
+    <h4 class="font-[Inter Variable] text-xl font-medium mt-7">Features</h4>
+    <div class="flex justify-between">
+      <div>
+        <ul class="list-disc">
+          <li>Add multiple packs</li>
+          <li>Switch pack at runtime</li>
+          <li>Change volume output</li>
+          <li>Translater from Mechvibes packs</li>
+          <li>Pack config generator</li>
+          <li>Lightweight and faster than Mechvibes</li>
+          <li>Secure by design</li>
+        </ul>
+        <h4 class="font-[Inter Variable] text-xl font-medium mt-7">Links</h4>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/NotAJocke/whisper-keys"
+              class="text-[#3489EB]"
+              target="_blank">Github</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <Image
+        class="border-white border-4 rounded-lg shadow-[0_0_12px_0_rgba(0,0,0,0.15)]"
+        src={screen}
+        alt="WhisperKeys Screenshot"
+        height={400}
+        id="img-whisper"
+      />
+    </div>
+  </div>
+</Layout>

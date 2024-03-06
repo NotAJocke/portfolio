@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import "@fontsource/poppins/400.css";
+import "@fontsource-variable/inter";
+
+import { getCollection } from "astro:content";
+const allArticles = await getCollection("articles");
+---
+
+<Layout title="Projects." activeID="2">
+  <header class="flex items-center flex-col">
+    <h1 class="font-[Poppins] text-[40px]">Blog</h1>
+    <div class="w-full h-[1px] bg-[#E1E4E8] mt-2 mb-6"></div>
+
+    <div
+      class="w-full flex flex-col items-center h-full overflow-y-scroll space-y-5"
+    >
+      {
+        allArticles.map((article) => (
+          <ArticleCard
+            title={article.data.title}
+            slug={article.slug}
+            date={article.data.date}
+            intro={article.data.intro}
+            imageName={article.data.image}
+          />
+        ))
+      }
+    </div>
+  </header>
+</Layout>

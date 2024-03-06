@@ -1,0 +1,49 @@
+---
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource-variable/inter";
+
+const { title, slug, imageName, date, intro } = Astro.props;
+
+const imageUrl = "/articles/" + imageName;
+
+import { Image } from "astro:assets";
+---
+
+<a
+  href={"/articles/" + slug}
+  class="flex justify-center border border-[#E1E4E8] rounded-2xl px-3 py-3 w-2/3 my-1"
+  id="card"
+>
+  <Image
+    src={imageUrl}
+    alt={title}
+    class="rounded-lg"
+    width={160}
+    height={120}
+  />
+  <div class="mx-2"></div>
+  <div class="flex flex-col">
+    <div class="text-[#3489EB] font-[Poppins] font-light text-sm">
+      {date}
+    </div>
+
+    <div class="font-[Poppins] text-xl">
+      {title}
+    </div>
+
+    <p class="font-[Inter Variable] font-light text-sm">{intro}</p>
+
+    <span class="font-[Inter Variable] font-medium text-sm"> Read more</span>
+  </div>
+</a>
+
+<style>
+  #card {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  #card:hover {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+  }
+</style>

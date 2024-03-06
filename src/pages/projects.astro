@@ -1,0 +1,73 @@
+---
+import "@fontsource/poppins/400.css";
+import "@fontsource-variable/inter";
+
+import { Image } from "astro:assets";
+import whisper from "../images/whisperkeys.png";
+import speaker from "../images/speaker.png";
+
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<Layout title="Projects." activeID="1">
+  <header class="flex items-center flex-col">
+    <h1 class="font-[Poppins] text-[40px]">My Projects</h1>
+    <div class="w-full h-[1px] bg-[#E1E4E8] mt-2"></div>
+  </header>
+  <div class="my-10"></div>
+  <div class="flex flex-wrap space-x-10">
+    <ProjectCard projectName="WhisperKeys" url="/projects/whisper">
+      <Image
+        src={whisper}
+        alt="WhisperKeys Logo"
+        slot="logo"
+        class="w-[50px] h-[50px]"
+      />
+      <div class="flex justify-end" slot="stack">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg"
+          alt="Rust logo"
+          class="h-[20px] mr-1"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/langfr-1920px-Svelte_Logo.svg.png"
+          alt="Svelte logo"
+          class="h-[20px]"
+        />
+      </div>
+      <p
+        slot="description"
+        class="font-[Inter Variable] text-[12px] font-light text-[#505050]"
+      >
+        Mechanical keyboard sound emulator
+      </p>
+    </ProjectCard>
+    <ProjectCard projectName="Speak'er" url="/projects/speaker">
+      <Image
+        src={speaker}
+        alt="Speak'er Logo"
+        slot="logo"
+        class="w-[55px] h-[55px]"
+      />
+      <div class="flex justify-end" slot="stack">
+        <img
+          src="https://seeklogo.com/images/F/firebase-logo-402F407EE0-seeklogo.com.png"
+          alt="Firebase logo"
+          class="h-[20px] mr-1"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/flutter-logo.svg"
+          alt="Flutter logo"
+          class="h-[20px]"
+        />
+      </div>
+      <p
+        slot="description"
+        class="font-[Inter Variable] text-[12px] font-light text-[#505050]"
+      >
+        Mobile and secure messaging app
+      </p>
+    </ProjectCard>
+  </div>
+</Layout>

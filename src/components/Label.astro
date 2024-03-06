@@ -1,0 +1,13 @@
+---
+import "@fontsource-variable/inter";
+
+const { name } = Astro.props;
+---
+
+<div
+  class="rounded-[15px] border w-fit border-[#E1E4E8] px-[20px] py-[5px] text-sm flex justify-center items-center"
+>
+  <slot />
+  <div class="w-[5px]"></div>
+  <span class="font-extralight font-[Inter Variable]">{name}</span>
+</div>
